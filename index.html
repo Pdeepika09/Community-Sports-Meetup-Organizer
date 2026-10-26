@@ -1,0 +1,182 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Community Sports Meetup Organizer</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <header class="navbar">
+    <a href="#" class="logo">Play<span>Mate</span></a>
+
+    <nav>
+      <a href="#home">Home</a>
+      <a href="#meetups">Explore Games</a>
+      <a href="#organize">Organize</a>
+      <a href="#dashboard">Dashboard</a>
+    </nav>
+  </header>
+
+  <main>
+    <section id="home" class="hero">
+      <p class="eyebrow">YOUR COMMUNITY. YOUR GAME.</p>
+      <h1>Find Your Game.<br>Meet Your Team.</h1>
+      <p>
+        Discover local sports meetups, join nearby games,
+        and connect with people who love to play.
+      </p>
+      <a class="btn" href="#meetups">Explore Games</a>
+    </section>
+
+    <section id="meetups" class="section">
+      <div class="section-heading">
+        <div>
+          <p class="eyebrow">DISCOVER</p>
+          <h2>Upcoming Meetups</h2>
+        </div>
+        <button class="btn" id="openForm">+ Create Meetup</button>
+      </div>
+
+      <div class="filters">
+        <input
+          type="search"
+          id="searchInput"
+          placeholder="Search sport or venue..."
+        >
+
+        <select id="sportFilter">
+          <option value="all">All Sports</option>
+          <option value="Cricket">Cricket</option>
+          <option value="Football">Football</option>
+          <option value="Badminton">Badminton</option>
+          <option value="Basketball">Basketball</option>
+        </select>
+      </div>
+
+      <div id="meetupList" class="meetup-grid"></div>
+      <p id="emptyMessage" hidden>No meetups found.</p>
+    </section>
+
+    <section id="organize" class="section">
+      <h2>Organize a Meetup</h2>
+
+      <form id="meetupForm" class="meetup-form">
+        <label>
+          Meetup Title
+          <input id="title" required
+                 placeholder="Example: Weekend Cricket">
+        </label>
+
+        <label>
+          Sport
+          <select id="sport" required>
+            <option value="Cricket">Cricket</option>
+            <option value="Football">Football</option>
+            <option value="Badminton">Badminton</option>
+            <option value="Basketball">Basketball</option>
+          </select>
+        </label>
+
+        <label>
+          Venue
+          <input id="venue" required placeholder="Enter venue">
+        </label>
+
+        <label>
+          Date
+          <input id="date" type="date" required>
+        </label>
+
+        <label>
+          Time
+          <input id="time" type="time" required>
+        </label>
+
+        <label>
+          Participant Limit
+          <input id="limit" type="number"
+                 min="1" max="100" value="10" required>
+        </label>
+
+        <button class="btn" type="submit">Publish Meetup</button>
+      </form>
+    </section>
+
+    
+<section id="dashboard" class="section">
+  <h2>Meetup Dashboard</h2>
+
+  <div class="profile-panel">
+    <label for="displayName">Your display name</label>
+    <div class="profile-row">
+      <input
+        type="text"
+        id="displayName"
+        placeholder="Enter your name"
+        maxlength="40"
+      >
+      <button class="btn" id="saveName" type="button">
+        Save Name
+      </button>
+    </div>
+    <p id="profileMessage" aria-live="polite"></p>
+  </div>
+
+      <div class="stats-grid">
+        <div class="stat-card">
+          <p>Total Meetups</p>
+          <h3 id="totalMeetups">0</h3>
+        </div>
+        <div class="stat-card">
+          <p>Joined Games</p>
+          <h3 id="joinedGames">0</h3>
+        </div>
+        <div class="stat-card">
+          <p>Upcoming Games</p>
+          <h3 id="upcomingGames">0</h3>
+        </div>
+        
+<section id="attendanceReports" class="section">
+  <p class="eyebrow">PERFORMANCE</p>
+  <h2>Attendance Reports</h2>
+  <p>Review attendance for completed sports meetups.</p>
+
+  <div class="stats-grid">
+    <div class="stat-card">
+      <p>Total Present</p>
+      <h3 id="reportPresent">0</h3>
+    </div>
+
+    <div class="stat-card">
+      <p>Total Absent</p>
+      <h3 id="reportAbsent">0</h3>
+    </div>
+
+    <div class="stat-card">
+      <p>Attendance Rate</p>
+      <h3 id="reportRate">0%</h3>
+    </div>
+  </div>
+
+  <div id="attendanceReportList" class="report-list"></div>
+</section>
+      </div>
+    </section>
+
+    <section id="reminders" class="section">
+      <h2>My Reminders & Waitlist</h2>
+      <div id="reminderList"></div>
+    </section>
+
+  </main>
+
+  <footer>
+    <p>© 2026 PlayMate | Community Sports Meetup Organizer</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
